@@ -1,8 +1,8 @@
 <nav class="bg-white shadow-lg">
     <div class="max-w-6xl mx-auto px-4">
         <div class="flex justify-between items-center h-16">
-            <div>
-                <a href="{{ route('posts.index') }}" class="text-xl font-bold">Blog</a>
+            <div class="hover:scale-110 origin-center transition-all">
+                <a href="{{ route('posts.index') }}" class="text-xl font-bold hover:text-teal-500 transition-all">Poster</a>
             </div>
             <div class="flex space-x-4">
                 @guest

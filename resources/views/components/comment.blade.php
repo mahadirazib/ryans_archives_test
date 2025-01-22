@@ -3,7 +3,7 @@
 <div class="{{ !$comment->parent_id ? 'border-b pb-6 last:border-b-0' : 'border-l-2 border-gray-200 pl-4' }}">
     <div class="flex justify-between items-start mb-2">
         <div>
-            <span class="font-bold">{{ $comment->user->name }}</span>
+            <a href="{{ route('profile.show', $comment->user) }}" class="font-bold text-gray-800 hover:text-teal-600 transition-all">{{ $comment->user->name }}</a>
             <span class="text-gray-500 text-sm ml-2">{{ $comment->created_at->diffForHumans() }}</span>
         </div>
         <div class="flex space-x-2">

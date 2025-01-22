@@ -1,3 +1,5 @@
+@props(['post'])
+
 <x-slot:title>
     {{ $post->title }}
 </x-slot>
@@ -18,7 +20,7 @@
     </div>
     
     <div class="flex items-center text-sm text-gray-500 mb-4">
-        <span>By {{ $post->user->name }}</span>
+        <span>By <a href="{{ route('profile.show', $post->user) }}" class="text-teal-500 hover:text-teal-600 transition-all">{{ $post->user->name }}</a></span>
         <span class="mx-2">•</span>
         <span>{{ $post->created_at->diffForHumans() }}</span>
         <span class="mx-2">•</span>

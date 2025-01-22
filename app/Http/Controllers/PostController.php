@@ -18,7 +18,7 @@ class PostController extends Controller
           }
         }
         
-        $posts = $query->paginate(10);
+        $posts = $query->paginate(9);
         $categories = Post::distinct()->pluck('category');
         
         return view('home', compact('posts', 'categories'));
