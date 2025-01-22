@@ -2,8 +2,13 @@
 
 <div class="bg-white rounded shadow-md p-6">
     <h2 class="text-xl font-bold mb-2">
-        <a href="{{ route('posts.show', $post) }}" class="hover:text-teal-500 transition-all">
-            {{ $post->title }}
+        @php
+            $title = Str::limit($post->title, 25);
+            $colors = ['text-teal-500', 'text-lime-500', 'text-sky-500', 'text-purple-500', 'text-pink-500', 'text-green-500', 'text-blue-500'];
+            $randomColor = $colors[array_rand($colors)];
+        @endphp
+        <a href="{{ route('posts.show', $post) }}" class="hover:{{ $randomColor }} transition-all">
+            {{ $title }}
         </a>
     </h2>
     <p class="text-gray-600 mb-4">{{ Str::limit($post->description, 150) }}</p>
